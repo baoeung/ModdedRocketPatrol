@@ -5,7 +5,7 @@ class Menu extends Phaser.Scene {
     create() {
         console.log(this);
         //display menu text
-        this.add.text(20, 20, "Rocket Patrol Menu");
+        this.add.text(20, 20, "Sea Patrol Menu");
 
         //menu display
         let menuConfig = {
@@ -26,7 +26,7 @@ class Menu extends Phaser.Scene {
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
-        this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY- textSpacer, 'SEA PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use ⟷ arrows to move & (F) to Fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
@@ -35,17 +35,14 @@ class Menu extends Phaser.Scene {
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        
-        // launch the next scene
-        //this.scene.start("playScene");
     }
 
     update() {
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
           // easy mode
           game.settings = {
-            spaceshipSpeed: 3,
-            gameTimer: 60000    
+            shipSpeed: 3,
+            gameTimer: 60000
           }
           this.sound.play('sfx_select');
           this.scene.start("playScene");    
@@ -53,7 +50,7 @@ class Menu extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
           // hard mode
           game.settings = {
-            spaceshipSpeed: 4,
+            shipSpeed: 4,
             gameTimer: 45000    
           }
           this.sound.play('sfx_select');
@@ -63,9 +60,9 @@ class Menu extends Phaser.Scene {
 
     preload() {
         // load audio
-        this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('sfx_select', './assets/select.wav'); //credit to InspectorJ from https://freesound.org/people/InspectorJ/sounds/352112/
+        this.load.audio('sfx_explosion', './assets/explosion.wav'); //Credit to Anoemex from https://freesound.org/people/Anomaex/sounds/490266/
+        this.load.audio('sfx_rocket', './assets/cannonShot.wav'); //Credit to Isaac200000 from https://freesound.org/people/Isaac200000/sounds/184650/
     }
 
 }
