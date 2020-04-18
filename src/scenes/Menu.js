@@ -2,6 +2,7 @@ class Menu extends Phaser.Scene {
     constructor() {
         super("menuScene");
     } 
+    
     create() {
         console.log(this);
         //display menu text
@@ -9,7 +10,7 @@ class Menu extends Phaser.Scene {
 
         //menu display
         let menuConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Apple Chancery',
             fontSize: '28px',
             backgroundColor: '#F3B141',
             color: '#843605',
@@ -63,6 +64,7 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx_select', './assets/select.wav'); //credit to InspectorJ from https://freesound.org/people/InspectorJ/sounds/352112/
         this.load.audio('sfx_explosion', './assets/explosion.wav'); //Credit to Anoemex from https://freesound.org/people/Anomaex/sounds/490266/
         this.load.audio('sfx_rocket', './assets/cannonShot.wav'); //Credit to Isaac200000 from https://freesound.org/people/Isaac200000/sounds/184650/
-    }
+        //this.load.audio('bg_Play', './assets/playBG.mp3'); //Credit to ShadyDave from https://freesound.org/people/ShadyDave/sounds/325407/
+      }
 
 }

@@ -13,7 +13,6 @@ let keyF, keyLEFT, keyRIGHT;
 // define game settings
 game.settings = {
     shipSpeed: 3,
-    gameTimer: 60000    
+    gameTimer: 60000,
+    gameClock: 45
 }
-
-//Test Push
