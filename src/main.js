@@ -14,5 +14,4 @@ let keyF, keyLEFT, keyRIGHT;
 game.settings = {
     shipSpeed: 3,
     gameTimer: 60000,
-    gameClock: 45
 }

@@ -79,7 +79,6 @@ class Play extends Phaser.Scene {
         }, null, this);
         
         //creates visible Timer counting down game time
-        //text = this.add.text(x, y, 'text', { font: "28px Courier", fill: "#ffffff", align: "center" }).setOrigin(0,0);
         counter = game.settings.gameTimer/1000;
         text2 = this.add.text(470,52, 'Time Left: ' + counter, { font: "20px Apple Chancery"}).setOrigin(0,0);
         timedClock = this.time.addEvent({ delay: 1000, callback: updateTime, callbackScope: this, loop:true});
